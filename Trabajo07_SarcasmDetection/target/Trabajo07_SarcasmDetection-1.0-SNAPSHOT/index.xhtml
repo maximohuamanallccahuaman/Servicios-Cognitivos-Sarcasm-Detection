@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="2">
+                <p:commandButton value="ingresar texto" update="txt sisarcarmo nosarcarmo" action="#{sarcasmoC.generarSarcasmo()}"/>
+                <p:inputTextarea value="#{sarcasmoC.modelo.texto}" id="txt" rows="5" cols="30" />
+            </p:panelGrid>
+            
+            <p:panelGrid columns="2">
+                <p:outputLabel style="font-weight: bold">Si es Sarcastico</p:outputLabel>
+                <p:outputLabel style="font-weight: bold" value="#{sarcasmoC.modelo.sisarcasmo*100}" id="sisarcarmo">%</p:outputLabel>
+                <p:outputLabel style="font-weight: bold">No es Sarcastico</p:outputLabel>
+                <p:outputLabel style="font-weight: bold" value="#{sarcasmoC.modelo.nosarcasmo*100}" id="nosarcarmo">%</p:outputLabel>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
