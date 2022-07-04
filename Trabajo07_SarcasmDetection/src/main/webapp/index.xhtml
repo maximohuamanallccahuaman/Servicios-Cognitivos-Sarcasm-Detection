@@ -8,22 +8,40 @@
       xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
     <h:head>
-        <title>Facelet Title</title>
+        <title>Trabajo07</title>
     </h:head>
     <h:body>
-        <h:form>
-            <p:panelGrid columns="2">
-                <p:commandButton value="ingresar texto" update="txt sisarcarmo nosarcarmo" action="#{sarcasmoC.generarSarcasmo()}"/>
-                <p:inputTextarea value="#{sarcasmoC.modelo.texto}" id="txt" rows="5" cols="30" />
-            </p:panelGrid>
-            
-            <p:panelGrid columns="2">
-                <p:outputLabel style="font-weight: bold">Si es Sarcastico</p:outputLabel>
-                <p:outputLabel style="font-weight: bold" value="#{sarcasmoC.modelo.sisarcasmo*100}" id="sisarcarmo">%</p:outputLabel>
-                <p:outputLabel style="font-weight: bold">No es Sarcastico</p:outputLabel>
-                <p:outputLabel style="font-weight: bold" value="#{sarcasmoC.modelo.nosarcasmo*100}" id="nosarcarmo">%</p:outputLabel>
-            </p:panelGrid>
-        </h:form>
+        <center>
+            <style>
+                body {background-image: url("https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fondos-pantalla-full-hd-animales_2.jpg?itok=Si6qZcB_");
+                }
+            </style>
+        </center>
+        <center>
+            <h1 style="font: oblique bold 220% cursive; color: yellow"> Aplicación de Detección de Sarcasmo </h1>
+            <h:form>
+                <p:panelGrid columns="1">
+                    <f:facet name= "header">INGRESAR TEXTO</f:facet>
+                    <p:inputTextarea value="#{sarcasmoC.modelo.texto}" id="txt" rows="5" cols="50" />
+                    <p:commandButton value="Enviar" update="txt sisarcarmo nosarcarmo" action="#{sarcasmoC.generarSarcasmo()}"/>
+                </p:panelGrid>
+                <br></br>
+
+                <p:panelGrid columns="2">
+                    <p:panelGrid columns="1">
+                        <p:outputLabel style="font-weight: bold">Si es Sarcastico</p:outputLabel>
+                        <p:outputLabel style="font-weight: bold" value="#{sarcasmoC.modelo.sisarcasmo*100}" id="sisarcarmo">%</p:outputLabel>
+                        <p:graphicImage url="https://i.pinimg.com/originals/42/bd/1a/42bd1ab683aaee39a8327d44bac7e2a3.png" style="width: 100px"/>
+                    </p:panelGrid>
+                    <p:panelGrid columns="1">
+                        <p:outputLabel style="font-weight: bold">No es Sarcastico</p:outputLabel>
+                        <p:outputLabel style="font-weight: bold" value="#{sarcasmoC.modelo.nosarcasmo*100}" id="nosarcarmo">%</p:outputLabel>
+                        <p:graphicImage url="https://i.pinimg.com/736x/55/d2/20/55d220279f4a84ddbfcbd25acdc74cd3.jpg" style="width: 90px"/>
+                    </p:panelGrid>
+                </p:panelGrid>
+
+            </h:form>
+        </center>
     </h:body>
 </html>
 

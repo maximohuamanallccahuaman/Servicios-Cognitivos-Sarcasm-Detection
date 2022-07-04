@@ -20,7 +20,7 @@ public class SarcarsmoC implements Serializable {
 
     public void generarSarcasmo() {
         try {
-            Sarcasmo.metodo(modelo);
+            Sarcasmo.metodoSarcasmo(modelo);
         } catch (Exception e) {
             System.out.println("Error en generar SarcasmoC: " + e.getMessage());
 

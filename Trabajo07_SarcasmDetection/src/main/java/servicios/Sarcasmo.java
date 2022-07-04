@@ -55,10 +55,9 @@ public class Sarcasmo {
         }
     }
 
-    public static void metodo(SarcasmDetection modelo) {
+    public static void metodoSarcasmo(SarcasmDetection modelo) {
         try {
             String texto = modelo.getTexto();
-
             if (api_key != null) {
                 String url = host + "sarcasm";
                 OkHttpClient client = new OkHttpClient();
@@ -85,9 +84,7 @@ public class Sarcasmo {
                     modelo.setSisarcasmo(sisar);
                     System.out.println("Resultado" + nosar + "\n");
                     System.out.println("Resultado" + sisar + "\n");
-
                 }
-
             }
         } catch (UnknownHostException e) {
             e.printStackTrace();
@@ -97,14 +94,14 @@ public class Sarcasmo {
     }
 
     public static void main(String[] args) throws Exception {
-        String texto = "soy victor la vida es triste, me quiero morir";
+        String texto = "sinceramente te creo";
         String resultado = "";
         resultado = sarcasm(texto);
         System.out.println("resultado" + resultado);
 
         SarcasmDetection model = new SarcasmDetection();
         model.setTexto(texto);
-        metodo(model);
+        metodoSarcasmo(model);
     }
 
 }
